@@ -1,0 +1,120 @@
+baseURL: "https://prinasi.github.io/"
+defaultContentLanguage: zh
+locale: zh-CN
+title: "Kyle's Blog"
+theme: ["PaperMod"]
+
+hasCJKLanguage: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+pagination:
+  pagerSize: 10
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+menu:
+  main:
+    - identifier: posts
+      name: 文章
+      url: /posts/
+      weight: 10
+    - identifier: journal
+      name: 日记
+      url: /journal/
+      weight: 20
+    - identifier: research
+      name: 科研
+      url: /research/
+      weight: 30
+    - identifier: archives
+      name: 归档
+      url: /archives/
+      weight: 40
+    - identifier: tags
+      name: 标签
+      url: /tags/
+      weight: 50
+    - identifier: search
+      name: 搜索
+      url: /search/
+      weight: 60
+    - identifier: about
+      name: 关于
+      url: /about/
+      weight: 70
+
+params:
+  env: production
+  title: "Kyle's Blog"
+  description: "记录科研、技术与生活随笔"
+  keywords: ["Blog", "Research", "Journal", "PaperMod", "Hugo"]
+  author: "Kyle"
+  DateFormat: "2006-01-02"
+  defaultTheme: auto
+  disableThemeToggle: false
+
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  ShowToc: true
+  TocOpen: false
+
+  math: true
+  ShowAllPagesInArchive: true
+  mainSections:
+    - posts
+    - journal
+    - research
+
+  homeInfoParams:
+    Title: "你好 👋 欢迎来到我的博客"
+    Content: "这里记录科研笔记、技术探索与生活随笔。代码、公式与思考的沉淀之处。"
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/prinasi"
+    - name: email
+      url: "mailto:2322688483@qq.com"
+
+  cover:
+    hidden: false
+    hiddenInList: false
+    hiddenInSingle: false
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+markup:
+  goldmark:
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+            - ["\\[", "\\]"]
+            - ["$$", "$$"]
+          inline:
+            - ["\\(", "\\)"]
+            - ["$", "$"]
+  highlight:
+    lineNos: true
+    lineNumbersInTable: true
+    noClasses: false
